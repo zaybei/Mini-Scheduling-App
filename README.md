@@ -6,6 +6,17 @@ A modern, beautiful social media scheduling web application similar to Buffer, b
 ![React](https://img.shields.io/badge/React-18.x-61dafb)
 ![Facebook API](https://img.shields.io/badge/Facebook%20API-v18.0-4267B2)
 
+## 🔗 Repository
+
+**GitHub**: [https://github.com/zaybei/Mini-Scheduling-App](https://github.com/zaybei/Mini-Scheduling-App)
+
+```bash
+# Clone the repository
+git clone https://github.com/zaybei/Mini-Scheduling-App.git
+cd Mini-Scheduling-App
+npm install
+```
+
 ## ✨ Features
 
 - 🔐 **Facebook Authentication** - Secure OAuth login with Facebook
