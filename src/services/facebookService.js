@@ -14,7 +14,8 @@ export const FB_API_BASE = 'https://graph.facebook.com';
 // Note: Using basic permissions that work in development mode
 export const FB_PERMISSIONS = [
   'public_profile',
-  'pages_show_list'
+  'pages_show_list',
+  'pages_read_user_content'
 ];
 
 // Initialize Facebook SDK
