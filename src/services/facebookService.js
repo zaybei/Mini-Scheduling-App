@@ -1,6 +1,6 @@
 // Facebook SDK Configuration
 export const FACEBOOK_CONFIG = {
-  appId: '846389588058017', // Your Facebook App ID
+  appId: '4463895880505017', // Your Facebook App ID
   version: 'v18.0',
   cookie: true,
   xfbml: true,
