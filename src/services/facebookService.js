@@ -1,6 +1,6 @@
 // Facebook SDK Configuration
 export const FACEBOOK_CONFIG = {
-  appId: 'YOUR_FACEBOOK_APP_ID', // Replace with your Facebook App ID
+  appId: '846389588058017', // Your Facebook App ID
   version: 'v18.0',
   cookie: true,
   xfbml: true,
@@ -24,14 +24,14 @@ export const FB_PERMISSIONS = [
 export const initFacebookSDK = () => {
   return new Promise((resolve) => {
     // Load the SDK asynchronously
-    window.fbAsyncInit = function() {
+    window.fbAsyncInit = function () {
       window.FB.init({
         appId: FACEBOOK_CONFIG.appId,
         cookie: FACEBOOK_CONFIG.cookie,
         xfbml: FACEBOOK_CONFIG.xfbml,
         version: FACEBOOK_CONFIG.version
       });
-      
+
       window.FB.AppEvents.logPageView();
       resolve(window.FB);
     };
@@ -146,7 +146,7 @@ export const schedulePost = async (pageId, accessToken, message, scheduledTime, 
     imageUrl,
     status: 'scheduled'
   };
-  
+
   // For now, we'll just return the data structure
   // In production, send this to your backend API
   console.log('Scheduling post:', postData);
@@ -160,7 +160,7 @@ export const getPageInsights = (pageId, accessToken, metrics = ['page_impression
     window.FB.api(
       `/${pageId}/insights`,
       'GET',
-      { 
+      {
         metric: metricsString,
         access_token: accessToken,
         period: 'day'
@@ -182,7 +182,7 @@ export const getPagePosts = (pageId, accessToken, limit = 10) => {
     window.FB.api(
       `/${pageId}/posts`,
       'GET',
-      { 
+      {
         fields: 'id,message,created_time,permalink_url,full_picture',
         limit: limit,
         access_token: accessToken
