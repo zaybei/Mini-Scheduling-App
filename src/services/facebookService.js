@@ -11,11 +11,14 @@ export const FACEBOOK_CONFIG = {
 export const FB_API_BASE = 'https://graph.facebook.com';
 
 // Permissions needed for posting
-// Note: Using basic permissions that work in development mode
+// NOTE: Most page-related permissions require Facebook App Review
+// For development/testing, only 'public_profile' works without review
+// To access pages and post content, you need to:
+// 1. Submit your app for Facebook App Review
+// 2. Request these permissions: pages_show_list, pages_manage_posts, pages_read_engagement
+// 3. Wait for Facebook approval (can take several days)
 export const FB_PERMISSIONS = [
-  'public_profile',
-  'pages_show_list',
-  'pages_read_user_content'
+  'public_profile'
 ];
 
 // Initialize Facebook SDK
