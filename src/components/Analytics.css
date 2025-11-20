@@ -1,0 +1,276 @@
+.analytics {
+    max-width: 1400px;
+    margin: 0 auto;
+    animation: fadeIn var(--transition-base) ease-out;
+}
+
+.analytics-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-2xl);
+    gap: var(--spacing-lg);
+    animation: slideDown var(--transition-base) ease-out;
+}
+
+.analytics-title {
+    font-size: var(--font-size-4xl);
+    font-weight: 800;
+    margin-bottom: var(--spacing-sm);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.analytics-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.page-selector {
+    padding: 0.75rem 1.25rem;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    background: var(--color-bg-elevated);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    outline: none;
+    box-shadow: var(--shadow-sm);
+}
+
+.page-selector:hover {
+    border-color: var(--color-primary);
+}
+
+.page-selector:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-alpha);
+}
+
+.analytics-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-3xl);
+    gap: var(--spacing-lg);
+}
+
+.analytics-loading p {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.metric-card {
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    transition: all var(--transition-base);
+    animation: scaleIn var(--transition-base) ease-out;
+    cursor: pointer;
+}
+
+.metric-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.metric-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-lg);
+    color: white;
+    box-shadow: var(--shadow-lg);
+    flex-shrink: 0;
+    transition: transform var(--transition-base);
+}
+
+.metric-card:hover .metric-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.metric-content {
+    flex: 1;
+}
+
+.metric-value {
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1;
+}
+
+.metric-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.recent-posts-section {
+    animation: slideUp var(--transition-base) ease-out;
+}
+
+.section-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text-primary);
+}
+
+.empty-posts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-3xl);
+    gap: var(--spacing-lg);
+    background: var(--color-bg-elevated);
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius-xl);
+    color: var(--color-text-tertiary);
+}
+
+.empty-posts svg {
+    opacity: 0.5;
+}
+
+.empty-posts p {
+    font-size: var(--font-size-base);
+    margin: 0;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.post-card {
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    animation: scaleIn var(--transition-base) ease-out;
+    animation-fill-mode: both;
+}
+
+.post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.post-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: var(--color-bg-secondary);
+}
+
+.post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.post-card:hover .post-image img {
+    transform: scale(1.05);
+}
+
+.post-content {
+    padding: var(--spacing-lg);
+}
+
+.post-message {
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-border-light);
+}
+
+.post-date {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-tertiary);
+}
+
+.post-link {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.post-link:hover {
+    color: var(--color-primary-dark);
+    transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+    .analytics-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .analytics-title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .analytics-subtitle {
+        font-size: var(--font-size-base);
+    }
+
+    .page-selector {
+        width: 100%;
+    }
+
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+}

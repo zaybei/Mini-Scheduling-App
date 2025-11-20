@@ -1,0 +1,191 @@
+.sidebar {
+    width: 280px;
+    background: var(--color-bg-elevated);
+    border-right: 1px solid var(--color-border-light);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    box-shadow: var(--shadow-sm);
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding: var(--spacing-lg);
+}
+
+.sidebar-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.sidebar-menu li {
+    animation: slideUp var(--transition-base) ease-out;
+    animation-fill-mode: both;
+}
+
+.sidebar-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+}
+
+.sidebar-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--gradient-primary);
+    transform: scaleY(0);
+    transition: transform var(--transition-fast);
+}
+
+.sidebar-item:hover:not(.disabled) {
+    background: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+    transform: translateX(4px);
+}
+
+.sidebar-item.active {
+    background: var(--color-primary-alpha);
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.sidebar-item.active::before {
+    transform: scaleY(1);
+}
+
+.sidebar-item.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.sidebar-item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform var(--transition-fast);
+}
+
+.sidebar-item:hover:not(.disabled) .sidebar-item-icon {
+    transform: scale(1.1);
+}
+
+.sidebar-item-label {
+    flex: 1;
+}
+
+.sidebar-item-indicator {
+    width: 6px;
+    height: 6px;
+    background: var(--color-primary);
+    border-radius: var(--radius-full);
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.sidebar-footer {
+    padding: var(--spacing-lg);
+    border-top: 1px solid var(--color-border-light);
+}
+
+.sidebar-card {
+    padding: var(--spacing-lg);
+    background: var(--gradient-subtle);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    animation: scaleIn var(--transition-base) ease-out;
+}
+
+.sidebar-card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto var(--spacing-md);
+    background: var(--color-primary-alpha);
+    color: var(--color-primary);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-base);
+}
+
+.sidebar-card:hover .sidebar-card-icon {
+    transform: rotate(10deg) scale(1.1);
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.sidebar-card h4 {
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-primary);
+}
+
+.sidebar-card p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.5;
+}
+
+.sidebar-card .btn {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        max-width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--color-border-light);
+    }
+
+    .sidebar-nav {
+        padding: var(--spacing-md);
+    }
+
+    .sidebar-menu {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: var(--spacing-sm);
+    }
+
+    .sidebar-item-label {
+        display: none;
+    }
+
+    .sidebar-item {
+        flex-direction: column;
+        padding: var(--spacing-sm);
+        min-width: 60px;
+    }
+
+    .sidebar-item:hover:not(.disabled) {
+        transform: translateY(-2px);
+    }
+
+    .sidebar-footer {
+        display: none;
+    }
+}
