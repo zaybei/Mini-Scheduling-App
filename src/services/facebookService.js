@@ -14,17 +14,14 @@ export const FB_API_BASE = 'https://graph.facebook.com';
 // Based on: https://developers.facebook.com/docs/pages/getting-started
 // 
 // IMPORTANT: For Development Mode
-// - These permissions work if you add yourself as Administrator/Developer in App Roles
-// - Go to: App Dashboard → App roles → Administrators → Add your account
-// - Once added, these permissions will work without App Review
+// - Add yourself as Administrator/Developer in: App Dashboard → App roles → Administrators
+// - Once added as Admin, you can test these permissions without App Review
 //
 // For Production (Live Mode):
-// - Submit for App Review to request these permissions
-// - Provide use case documentation and screen recordings
+// - Submit for App Review to request advanced permissions
 export const FB_PERMISSIONS = [
   'public_profile',
-  'pages_show_list',           // Required to list user's pages
-  'pages_read_user_content'    // Required to read page content and get page access tokens
+  'pages_show_list'  // Core permission to access user's Facebook pages
 ];
 
 // Initialize Facebook SDK
@@ -102,10 +99,14 @@ export const getUserProfile = () => {
 // Get User's Facebook Pages
 export const getUserPages = () => {
   return new Promise((resolve, reject) => {
+    console.log('Fetching user pages from Facebook API...');
     window.FB.api('/me/accounts', (response) => {
+      console.log('Facebook API Response:', response);
       if (response && !response.error) {
+        console.log('Pages found:', response.data?.length || 0);
         resolve(response.data || []);
       } else {
+        console.error('Error fetching pages:', response.error);
         reject(response.error);
       }
     });
