@@ -11,11 +11,10 @@ export const FACEBOOK_CONFIG = {
 export const FB_API_BASE = 'https://graph.facebook.com';
 
 // Permissions needed for posting
+// Note: Using basic permissions that work in development mode
 export const FB_PERMISSIONS = [
-  'pages_show_list',
-  'pages_read_engagement',
-  'pages_manage_posts',
-  'public_profile'
+  'public_profile',
+  'pages_show_list'
 ];
 
 // Initialize Facebook SDK
